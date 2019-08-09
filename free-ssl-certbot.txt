@@ -1,0 +1,17 @@
+FREE SSL ON CENTOS
+
+link --  https://linuxhostsupport.com/blog/how-to-install-lets-encrypt-on-centos-7-with-apache/
+
+yum -y install epel-release
+yum -y install yum-utils
+yum -y install certbot-apache
+certbot --apache 
+Certbot will ask you for the names you would like to activate HTTPS for:
+
+
+
+Configure automatic renewal
+
+export EDITOR=/bin/nano  (to make nano as the default editor)
+crontab -e
+* */12 * * * /usr/bin/certbot renew >/dev/null 2>&1
